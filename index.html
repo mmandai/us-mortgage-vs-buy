@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent vs Buy USA 2026 — Price-to-Rent Ratio & Break-Even Analysis</title>
+<meta name="description" content="Rent vs buy USA compared — true cost of ownership, price-to-rent ratio by city, break-even horizon and when buying actually wins. Updated 2026.">
+<link rel="canonical" href="https://mmandai.github.io/us-rent-vs-buy/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-53M2RMSY9Q"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-53M2RMSY9Q');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Rent vs Buy USA 2026 — Price-to-Rent Ratio & Break-Even Analysis","url":"https://mmandai.github.io/us-rent-vs-buy/","inLanguage":"en-US","publisher":{"@type":"Organization","name":"MMDAI","url":"https://mmandai.github.io"},"dateModified":"2026-05-18"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MMDAI","item":"https://mmandai.github.io"},{"@type":"ListItem","position":2,"name":"US Rent vs Buy","item":"https://mmandai.github.io/us-rent-vs-buy/"}]}]}</script>
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;}
+body{background:#f8fafc;color:#0f1117;font-family:'Manrope',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;}
+:root{
+  --blue:#2563eb;--blue2:#1d4ed8;
+  --ink:#0f1117;--ink2:#3a3f4d;--ink3:#7a8099;--ink4:#b0b6c8;
+  --paper:#f8fafc;--paper2:#e8edf5;--white:#fff;--rule:#dde3ed;
+  --navy:#0a1628;--green:#16a34a;--red:#dc2626;--amber:#d97706;
+  --sans:'Manrope',sans-serif;
+  --mono:'DM Mono',monospace;
+  --r:8px;--r2:14px;
+}
+/* HEADER */
+.site-header{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;position:sticky;top:0;z-index:200;}
+.hd-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Manrope',sans-serif;font-size:18px;font-weight:800;color:#fff;text-decoration:none;}
+.logo em{color:#2563eb;font-style:normal;}
+.hd-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);text-decoration:none;}
+.hd-nav a:hover{color:#fff;}
+/* COOKIE */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a1628;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:13px;}
+.cookie-banner p{max-width:560px;text-align:center;color:rgba(255,255,255,.7);}
+.cookie-banner a{color:#fff;text-decoration:underline;}
+.cookie-btn{padding:8px 20px;border-radius:40px;font-size:13px;font-weight:700;cursor:pointer;border:none;}
+.cookie-accept{background:#2563eb;color:#fff;}
+.cookie-reject{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)!important;}
+.cookie-buttons{display:flex;gap:8px;}
+@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;}}
+/* HERO */
+.hero{padding:64px 24px 52px;border-bottom:1px solid rgba(255,255,255,.08);text-align:center;background:#0a1628;}
+.hero-kicker{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#2563eb;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.hero-kicker::before,.hero-kicker::after{content:'';display:inline-block;width:24px;height:1px;background:#2563eb;}
+.hero h1{font-family:'Manrope',sans-serif;font-size:clamp(30px,4vw,56px);font-weight:800;line-height:1.08;letter-spacing:-.02em;color:#fff;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:#2563eb;}
+.hero-lead{font-size:17px;color:rgba(255,255,255,.7);line-height:1.7;max-width:600px;margin:0 auto 28px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.pill{font-size:12px;font-weight:600;color:rgba(255,255,255,.65);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 12px;}
+/* LAYOUT */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+.page-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:52px 0 80px;align-items:start;}
+@media(max-width:900px){
+  .page-layout{display:block;padding:32px 0 40px;}
+  .page-layout > .article{display:block;margin-bottom:32px;}
+  .page-layout > .sidebar{display:block;clear:both;}
+}
+@media(max-width:560px){.wrap{padding:0 16px;}}
+/* ARTICLE */
+.article h2{font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#0f1117;margin:40px 0 14px;letter-spacing:-.02em;text-align:center;}
+.article h3{text-align:center;}
+.article{max-width:100%;text-align:center;}.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:#0f1117;margin:28px 0 10px;}
+.article p{font-size:15px;color:#3a3f4d;line-height:1.8;margin-bottom:14px;}
+.article p a{color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;}
+.article strong{color:#0f1117;font-weight:700;}
+/* EXAMPLE BOX */
+.example-box{background:#fff;border:1px solid #dde3ed;border-left:3px solid #2563eb;border-radius:0 14px 14px 0;padding:20px 24px;margin:20px 0;}
+.ex-label{font-family:'DM Mono',monospace;font-size:10px;color:#1d4ed8;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;text-align:center;}
+.ex-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #dde3ed;font-size:14px;color:#3a3f4d;}
+.ex-row:last-child{border-bottom:none;font-weight:700;color:#0f1117;}
+.ex-row span:last-child{font-family:'DM Mono',monospace;font-size:13px;white-space:nowrap;}
+.ex-neg{color:#dc2626;}
+.ex-pos{color:#16a34a;}
+/* TABLES */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;}
+.data-table{width:100%;min-width:320px;border-collapse:collapse;font-size:14px;}
+.data-table th{background:#e8edf5;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7a8099;padding:10px 14px;text-align:center;border-bottom:2px solid #dde3ed;white-space:nowrap;}
+.data-table td{padding:11px 14px;border-bottom:1px solid #dde3ed;color:#3a3f4d;vertical-align:top;text-align:center;word-break:break-word;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table td:first-child{text-align:center;}
+@media(max-width:600px){
+  .data-table{table-layout:fixed;font-size:12px;}
+  .data-table th,.data-table td{padding:8px 8px;white-space:normal;word-break:break-word;}
+}
+.data-table .good{color:#16a34a;font-weight:700;}
+.data-table .bad{color:#dc2626;font-weight:700;}
+.data-table .mid{color:#d97706;font-weight:700;}
+.data-table .hl{background:rgba(37,99,235,.07);font-weight:700;}
+/* TWO-COL CARDS */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}}
+.col-card{background:#fff;border:1px solid #dde3ed;border-radius:14px;padding:20px;text-align:center;}
+.col-card h3{font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;margin-bottom:12px;color:#0f1117;}
+.col-card ul{display:block;text-align:center;margin:0 auto;padding:0;list-style:none;}
+.col-card ul li{font-size:13px;color:#3a3f4d;line-height:1.8;padding-left:0;}
+.col-card ul li::before{content:none;}
+/* VERDICT */
+.verdict{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.18);border-radius:14px;padding:20px 24px;margin:28px 0;}
+.verdict-label{font-family:'DM Mono',monospace;font-size:10px;color:#1d4ed8;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;text-align:center;}
+.verdict p{font-size:15px;color:#3a3f4d;line-height:1.7;margin:0;}
+/* FAQ */
+.faq-section{margin-top:40px;}
+.faq-section h2{text-align:center;}
+.faq-item{border-bottom:1px solid #dde3ed;}
+.faq-item summary{font-size:15px;font-weight:600;color:#0f1117;padding:16px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.faq-item summary::after{content:'+';font-size:20px;color:#2563eb;flex-shrink:0;transition:transform .2s;}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-body{font-size:14px;color:#3a3f4d;line-height:1.8;padding:0 0 16px;text-align:left;}
+.faq-body a{color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;}
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px;text-align:center;}
+@media(min-width:901px){.sidebar{position:sticky;top:90px;align-self:start;}}
+@media(max-width:900px){.sidebar{position:static !important;top:auto !important;}.side-card h3,.side-card p,.side-links,.side-btn{text-align:center;}}
+.side-card{background:#fff;border:1px solid #dde3ed;border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.07);}
+.side-card h3{font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;color:#2563eb;margin-bottom:8px;}
+.side-card p{font-size:13px;color:#7a8099;line-height:1.6;margin-bottom:14px;}
+.side-btn{display:block;text-align:center;background:#2563eb;color:#fff;font-weight:700;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;margin-bottom:6px;}
+.side-btn.outline{background:transparent;border:1px solid #dde3ed;color:#3a3f4d;}
+.side-links{display:flex;flex-direction:column;gap:6px;margin-top:4px;text-align:center;}
+.side-links a{font-size:13px;color:#3a3f4d;text-decoration:none;padding:7px 10px;border-radius:8px;background:#e8edf5;display:flex;justify-content:center;align-items:center;text-align:center;}
+.side-links a:hover{background:#dde3ed;}
+/* FOOTER */
+footer{background:#0a1628;color:rgba(255,255,255,.5);padding:40px 0;text-align:center;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.footer-logo{font-weight:800;font-size:18px;color:#fff;}
+.footer-logo em{color:#2563eb;font-style:normal;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;font-weight:500;}
+.footer-links a:hover{color:#fff;}
+.footer-disc{font-size:11px;color:rgba(255,255,255,.25);max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;}
+
+@media(max-width:900px){
+  .article h2,.article h3,.article p,.verdict p,.faq-section h2{text-align:center;}
+  .side-card{text-align:center;}
+  .side-links a{justify-content:center;}
+  .faq-item summary{text-align:left;}
+  .faq-body{text-align:left;}
+  .ex-row{text-align:left;}
+}
+</style>
+</head>
+<body>
+<div class="cookie-banner" id="cookieBanner" style="display:none;">
+  <p>We use cookies from Google Analytics and Google AdSense. See our <a href="https://mmandai.github.io/privacy/">Privacy Policy</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-accept" onclick="setCookieConsent('accepted')">Accept</button>
+    <button class="cookie-btn cookie-reject" onclick="setCookieConsent('rejected')">Reject</button>
+  </div>
+</div>
+<header class="site-header">
+  <div class="hd-inner">
+    <a href="https://mmandai.github.io" class="logo">MM<em>DAI</em></a>
+    <nav class="hd-nav"><a href="https://mmandai.github.io/about/">About</a></nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-kicker">US Housing · 2026</div>
+  <h1>Rent vs <em>Buy</em> USA</h1>
+  <p class="hero-lead">The true cost of buying versus renting in America — closing costs, break-even horizon, price-to-rent ratios by city, and when ownership actually wins.</p>
+  <div class="hero-pills"><span class="pill">Break-even analysis</span><span class="pill">Price-to-rent ratio</span><span class="pill">True cost of ownership</span><span class="pill">Updated 2026</span></div>
+</section>
+<div class="wrap">
+<div class="page-layout">
+<article class="article">
+
+<h2>The comparison most people get wrong</h2>
+<p>The typical rent vs buy comparison pits a monthly mortgage payment against a monthly rent figure. That misses most of the real cost of buying. Ownership adds closing costs of 2–5% of the purchase price, property taxes, homeowner's insurance, PMI if your down payment is under 20%, HOA fees in many communities, and ongoing maintenance that renters never touch. The monthly mortgage payment is the floor, not the ceiling.</p>
+<p>At the same time, renting ignores equity accumulation and offers no protection against rent increases. <strong>Neither option wins universally</strong> — the outcome depends on how long you stay, local price-to-rent ratios and what you would otherwise do with a down payment.</p>
+
+<h2>Upfront costs: buying vs renting</h2>
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>Cost</th><th>Buying ($400k home)</th><th>Renting</th></tr></thead>
+<tbody>
+<tr><td>Down payment / deposit</td><td>$20,000–$80,000 (5–20%)</td><td>1–2 months rent ~$3,600</td></tr>
+<tr><td>Closing costs</td><td class="bad">$8,000–$20,000 (2–5%)</td><td class="good">None</td></tr>
+<tr><td>Home inspection</td><td>$300–$500</td><td class="good">None</td></tr>
+<tr><td>Appraisal fee</td><td>$400–$700</td><td class="good">None</td></tr>
+<tr><td>Title insurance</td><td>$1,000–$2,500</td><td class="good">None</td></tr>
+<tr><td>Moving costs</td><td>$1,000–$3,000</td><td>$1,000–$3,000</td></tr>
+<tr class="hl"><td>Total upfront (excl. down payment)</td><td><span class="bad">~$12,000–$26,000</span></td><td><span class="good">~$4,600</span></td></tr>
+</tbody>
+</table></div>
+
+<h2>Monthly cost comparison</h2>
+<div class="example-box">
+<div class="ex-label">$400,000 home — 10% down, 30-year term, 6.8% rate</div>
+<div class="ex-row"><span>Monthly mortgage (P&I)</span><span>$2,349</span></div>
+<div class="ex-row"><span>Property tax (~1.1% p.a.)</span><span>~$367</span></div>
+<div class="ex-row"><span>Homeowner's insurance</span><span>~$150</span></div>
+<div class="ex-row"><span>PMI (under 20% down)</span><span>~$150</span></div>
+<div class="ex-row"><span>Maintenance reserve (1% p.a.)</span><span>~$333</span></div>
+<div class="ex-row"><span>Total monthly ownership cost</span><span>~$3,349</span></div>
+<div class="ex-row"><span>Equivalent rent (same area)</span><span>~$2,200</span></div>
+<div class="ex-row"><span>Monthly gap (owning costs more)</span><span class="ex-neg">~$1,149/month</span></div>
+</div>
+<p>The gap is significant at today's mortgage rates. It narrows once PMI drops off (typically at 20% equity) and as fixed mortgage payments stay flat while rents rise. The break-even question is how many years it takes for equity accumulation and rent inflation to offset the higher initial cost of owning.</p>
+
+<h2>The break-even horizon</h2>
+<p>Break-even is the point at which cumulative total costs of buying — closing costs, higher monthly outlay, opportunity cost of the down payment — equal cumulative total costs of renting. Below that horizon, renting is cheaper in cash terms. Above it, owning has typically cost less, assuming some home price appreciation.</p>
+
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>Market type</th><th>Approx break-even</th><th>Key driver</th></tr></thead>
+<tbody>
+<tr><td>High-cost coastal (NYC, SF, LA)</td><td class="bad">10–15+ years</td><td>Extreme price-to-rent ratios</td></tr>
+<tr><td>Mid-tier city (Denver, Austin, Seattle)</td><td class="mid">6–9 years</td><td>Elevated prices, good rent growth</td></tr>
+<tr><td>Sun Belt / Midwest (Phoenix, Columbus)</td><td class="good">4–6 years</td><td>Affordable prices, strong demand</td></tr>
+<tr><td>Low-cost interior markets</td><td class="good">3–5 years</td><td>Low prices, stable rents</td></tr>
+</tbody>
+</table></div>
+
+<p>These ranges assume ~3% annual home price appreciation and ~3% annual rent growth. At today's rates, break-even has lengthened by 2–3 years compared to the low-rate environment of 2020–2021. Use the <a href="https://mmandai.github.io/us-rent-vs-buy/">Rent vs Buy calculator</a> to model your specific market.</p>
+
+<h2>Price-to-rent ratio by major city</h2>
+<p>The price-to-rent ratio divides a home's purchase price by its annual rent equivalent. A ratio above 25 generally favours renting; below 20 generally favours buying. Most US metros currently sit well above 20, reflecting the impact of pandemic-era price appreciation.</p>
+
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>City</th><th>Median home price</th><th>Monthly rent</th><th>P/R ratio</th><th>Signal</th></tr></thead>
+<tbody>
+<tr><td>San Francisco</td><td>$1,150,000</td><td>$3,200</td><td class="bad">30.0</td><td class="bad">Rent-leaning</td></tr>
+<tr><td>New York City</td><td>$750,000</td><td>$2,900</td><td class="bad">21.6</td><td class="bad">Rent-leaning</td></tr>
+<tr><td>Los Angeles</td><td>$820,000</td><td>$2,700</td><td class="bad">25.3</td><td class="bad">Rent-leaning</td></tr>
+<tr><td>Austin</td><td>$490,000</td><td>$1,950</td><td class="mid">20.9</td><td class="mid">Neutral</td></tr>
+<tr><td>Phoenix</td><td>$415,000</td><td>$1,850</td><td class="mid">18.7</td><td class="good">Buy-leaning</td></tr>
+<tr><td>Columbus</td><td>$290,000</td><td>$1,450</td><td class="good">16.7</td><td class="good">Buy-leaning</td></tr>
+<tr><td>Indianapolis</td><td>$265,000</td><td>$1,350</td><td class="good">16.4</td><td class="good">Buy-leaning</td></tr>
+</tbody>
+</table></div>
+<p>Figures are approximate 2026 averages. Coastal metros continue to favour renting on a pure price-to-rent basis, while affordable Midwest and Sun Belt markets offer more compelling ownership economics — even at current rates.</p>
+
+<h2>The case for each</h2>
+<div class="two-col">
+  <div class="col-card">
+    <h3>Case for buying</h3>
+    <ul>
+      <li>Fixed mortgage — payment locked for 30 years</li>
+      <li>Equity builds with every payment</li>
+      <li>Home appreciation sheltered from capital gains tax (up to $250k/$500k exclusion)</li>
+      <li>Mortgage interest deduction (if itemizing)</li>
+      <li>No landlord risk — eviction, sale, rent hikes</li>
+      <li>Freedom to renovate and customize</li>
+    </ul>
+  </div>
+  <div class="col-card">
+    <h3>Case for renting</h3>
+    <ul>
+      <li>Lower upfront capital commitment</li>
+      <li>Geographic flexibility for career moves</li>
+      <li>No maintenance or repair liability</li>
+      <li>Down payment can compound in the market</li>
+      <li>No exposure to falling home prices</li>
+      <li>Easier to right-size as household changes</li>
+    </ul>
+  </div>
+</div>
+
+<h2>The opportunity cost of the down payment</h2>
+<p>A 20% down payment on a $400,000 home is $80,000 of capital that could otherwise remain invested. At a 7% average annual return (long-run S&P 500 real return), $80,000 grows to approximately $309,000 over 20 years. That is the opportunity cost of the down payment — which must be weighed against the equity growth of the home itself.</p>
+
+<div class="example-box">
+<div class="ex-label">$80,000 down payment — opportunity cost vs equity, 20 years</div>
+<div class="ex-row"><span>Invested in equities @ 7% p.a.</span><span class="ex-pos">~$309,000</span></div>
+<div class="ex-row"><span>Home equity: $400k @ 3% appreciation</span><span class="ex-pos">~$722,000</span></div>
+<div class="ex-row"><span>Less: 30-year mortgage interest paid</span><span class="ex-neg">~$340,000</span></div>
+<div class="ex-row"><span>Less: property tax, insurance, maintenance</span><span class="ex-neg">~$120,000</span></div>
+<div class="ex-row"><span>Less: closing costs</span><span class="ex-neg">~$16,000</span></div>
+<div class="ex-row"><span>Net home wealth gain (approx)</span><span>~$246,000</span></div>
+</div>
+<p>On these assumptions, owning comes out ahead — but the margin is narrower than it looks, and the result is highly sensitive to home price growth and mortgage rate. Home sale proceeds on a primary residence are also sheltered from capital gains up to $250,000 (single) or $500,000 (married filing jointly), which the equity investment doesn't enjoy.</p>
+
+<h2>How high mortgage rates change the math</h2>
+<p>The 2020–2021 environment of sub-3% mortgage rates made ownership economics unusually attractive across almost every US market. At 6.5–7%, the monthly cost of buying has risen far faster than rents — pushing break-even timelines out and making the rent-vs-buy decision genuinely market-dependent again.</p>
+<p>Rates are unlikely to return to pandemic lows. The common advice to <strong>"marry the house, date the rate"</strong> — buy now and refinance later — assumes rates will fall meaningfully, which is uncertain. Model multiple rate scenarios before committing.</p>
+
+<div class="verdict">
+<div class="verdict-label">Verdict</div>
+<p>Buying beats renting financially in most US markets if you stay for 6–8 years or more and benefit from normal home price appreciation. At current mortgage rates, renting and investing the difference is genuinely competitive — especially in high price-to-rent coastal metros. The non-financial factors — stability, control, community — often weigh as heavily as the numbers. Run your specific city, timeline and rate assumptions before deciding.</p>
+</div>
+
+<div class="faq-section"><h2>Frequently asked questions</h2>
+<details class="faq-item"><summary>Is it always better to buy than rent in the US?</summary>
+<div class="faq-body">No — it depends heavily on your local market, how long you plan to stay and current mortgage rates. In high price-to-rent cities like San Francisco or New York, renting and investing the difference can outperform buying over a 10-year horizon. In affordable Midwest markets with lower P/R ratios, buying often wins within 4–5 years.</div></details>
+<details class="faq-item"><summary>What closing costs should I expect?</summary>
+<div class="faq-body">Buyers typically pay 2–5% of the purchase price in closing costs, covering lender origination fees, title insurance, escrow fees, prepaid property taxes and homeowner's insurance, and recording fees. On a $400,000 home that's $8,000–$20,000. Some costs are negotiable or can be rolled into seller concessions in a buyer's market.</div></details>
+<details class="faq-item"><summary>What is a good price-to-rent ratio?</summary>
+<div class="faq-body">As a general rule: below 15 strongly favours buying, 15–20 leans towards buying, 20–25 is neutral to borderline, above 25 favours renting. Most major US metros currently sit between 18 and 30 — with coastal cities at the expensive end and Midwest markets at the affordable end.</div></details>
+<details class="faq-item"><summary>Do I pay capital gains tax when I sell my home?</summary>
+<div class="faq-body">Not typically, up to certain limits. The IRS primary residence exclusion allows single filers to exclude up to $250,000 of gain and married couples filing jointly to exclude up to $500,000, provided you have owned and lived in the home as your primary residence for at least two of the past five years. Gains above these thresholds are taxed at long-term capital gains rates.</div></details>
+<details class="faq-item"><summary>Does renting and investing the down payment beat buying?</summary>
+<div class="faq-body">It can — especially in high price-to-rent markets at today's rates. The key variables are the return on the invested down payment versus home price appreciation, plus the monthly cost difference between renting and owning. A rent vs buy calculator that models both sides over your expected hold period gives a much cleaner answer than rules of thumb.</div></details>
+</div>
+</article>
+<aside class="sidebar">
+<div class="side-card">
+<h3>Related reading</h3>
+<div class="side-links">
+<a href="https://mmandai.github.io/us-cap-rate-explained/">Cap Rate Explained</a>
+<a href="https://mmandai.github.io/us-macrs-depreciation/">MACRS Depreciation</a>
+<a href="https://mmandai.github.io/us-fha-vs-conventional/">FHA vs Conventional</a>
+</div></div>
+<div class="side-card">
+<h3>Rent vs Buy Calculator</h3>
+<p>Model break-even year, true ownership cost and price-to-rent ratio for any US market.</p>
+<a href="https://mmandai.github.io/us-rent-vs-buy/" class="side-btn">Open Calculator →</a>
+</div>
+<div class="side-card">
+<h3>Related calculators</h3>
+<div class="side-links">
+<a href="https://mmandai.github.io/us-cap-rate/">Cap Rate Calculator</a>
+<a href="https://mmandai.github.io/us-mortgage-calculator/">Mortgage Calculator</a>
+<a href="https://mmandai.github.io/us-affordability/">Affordability Calculator</a>
+</div></div>
+</aside>
+</div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">MM<em>DAI</em></div>
+    <div class="footer-links">
+      <a href="https://mmandai.github.io/#us">US Calculators</a>
+      <a href="https://mmandai.github.io/us-glossary/">US Glossary</a>
+      <a href="https://mmandai.github.io/methodology/">How It Works</a>
+      <a href="https://mmandai.github.io/about/">About</a>
+      <a href="https://mmandai.github.io/privacy/">Privacy Policy</a>
+    </div>
+    <p class="footer-disc">For informational purposes only. Not financial or tax advice. MMDAI — last reviewed May 2026.</p>
+  </div>
+</footer>
+<script>
+function setCookieConsent(c){localStorage.setItem('cookieConsent',c);document.getElementById('cookieBanner').style.display='none';}
+if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieBanner').style.display='flex';}
+document.querySelectorAll('.faq-item').forEach(i=>{i.addEventListener('toggle',()=>{if(i.open)document.querySelectorAll('.faq-item').forEach(o=>{if(o!==i&&o.open)o.removeAttribute('open');});});});
+</script>
+</body>
+</html>
